@@ -12,7 +12,7 @@ var fn = function(runFunction) {
 	var timeout = Math.round((max-min)*Math.random()+min);
 	setTimeout((function() {
 		play.sound('./blip.wav');		
-	  	console.log('sleeping for ' + timeout);
+	  	console.log('sleeping...');
 	  	runFunction(runFunction);
 	}), timeout);
 }
