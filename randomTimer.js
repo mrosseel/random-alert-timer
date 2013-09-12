@@ -17,4 +17,5 @@ var fn = function(runFunction) {
 	}), timeout);
 }
 
+console.log('Starting random timer, waiting between ' + minMins + ' and ' + maxMins + ' minutes.');
 fn(fn);
