@@ -1,6 +1,6 @@
 var play = require('play');
 
-var minutesToMilliseconds = 60;
+var minutesToMilliseconds = 60000;
 
 var minMins = 12;
 var maxMins = 17;
