@@ -1,0 +1,18 @@
+{
+  "name": "random-alert-timer",
+  "preferGlobal": true,
+  "version": "0.1.0",
+  "author": "Mike Rosseel <mike@eon-consult.be>",
+  "description": "plays a sound every X minutes, with X being between a min and max setting",
+  "contributors": [ 
+  ],
+  "dependencies" : {
+    "play"   :  "*",
+    "commander" :  "2.0.0"
+  },
+  "analyze": false,
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.6"
+  }
+}

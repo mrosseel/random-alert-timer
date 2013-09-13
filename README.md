@@ -7,7 +7,14 @@ Wanted this to play with some Quantified Self, 7 habits-style ideas: this should
 
 PS: made this really quick so might not follow node style
 
-Usage:
+Prerequisites:
+
+```
+npm install
+```
+
+Usage
+
 ```
 node randomTimer.js
  ```
