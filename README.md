@@ -13,7 +13,7 @@ Prerequisites:
 npm install
 ```
 
-Usage
+Usage:
 
 ```
 node randomTimer.js
