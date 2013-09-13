@@ -26,16 +26,30 @@ var max = maxMins * minutesToMilliseconds;
 
 // keep track how many we played the sound
 var count = 0;
+var totalTime = 0;
 
+// the main function
 var fn = function(runFunction) {
 	var timeout = Math.round((max-min)*Math.random()+min);
 	setTimeout((function() {
 		play.sound(soundFile);		
 	  	count += 1;
-	  	console.log('[' + count + '] done, sleeping...');
+	  	totalTime += timeout;
+	  	console.log('[nr ' + count + '] - ' + Math.round(totalTime/minutesToMilliseconds) + ' minutes total, timeout was ' + (timeout/minutesToMilliseconds).toFixed(1) + ' minutes');
 	  	runFunction(runFunction);
 	}), timeout);
 }
 
-console.log('Starting random timer, waiting between ' + minMins + ' and ' + maxMins + ' minutes.');
+// show start time
+var currentdate = new Date(); 
+var datetime = currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " @ "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+
+console.log('Starting random timer (' + datetime + '), waiting between ' + minMins + ' and ' + maxMins + ' minutes.');
+
+// start the recursive loop
 fn(fn);
