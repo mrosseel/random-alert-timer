@@ -35,21 +35,24 @@ var fn = function(runFunction) {
 		play.sound(soundFile);		
 	  	count += 1;
 	  	totalTime += timeout;
-	  	console.log('[nr ' + count + '] - ' + Math.round(totalTime/minutesToMilliseconds) + ' minutes total, timeout was ' + (timeout/minutesToMilliseconds).toFixed(1) + ' minutes');
+	  	console.log(getTime() + ' [nr ' + count + '] - ' + Math.round(totalTime/minutesToMilliseconds) + ' minutes total, timeout was ' + (timeout/minutesToMilliseconds).toFixed(1) + ' minutes');
 	  	runFunction(runFunction);
 	}), timeout);
 }
 
-// show start time
-var currentdate = new Date(); 
-var datetime = currentdate.getDate() + "/"
-                + (currentdate.getMonth()+1)  + "/" 
-                + currentdate.getFullYear() + " @ "  
-                + currentdate.getHours() + ":"  
-                + currentdate.getMinutes() + ":" 
-                + currentdate.getSeconds();
+var getTime = function() {
+	// show start time
+	var currentdate = new Date(); 
+	return currentdate.getDate() + "/"
+	                + (currentdate.getMonth()+1)  + "/" 
+	                + currentdate.getFullYear() + " @ "  
+	                + currentdate.getHours() + ":"  
+	                + currentdate.getMinutes() + ":" 
+	                + currentdate.getSeconds();
 
-console.log('Starting random timer (' + datetime + '), waiting between ' + minMins + ' and ' + maxMins + ' minutes.');
+}
+
+console.log('Starting random timer (' + getTime() + '), waiting between ' + minMins + ' and ' + maxMins + ' minutes.');
 
 // start the recursive loop
 fn(fn);
